@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    {% block title %}
+      <title>DEV</title>
+    {% endblock %}
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="asset/css/style.css">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+
+  {% set nav = {
+    'links': [
+      {
+        'label': 'Home',
+        'href': '/?p=index',
+        'home': true
+      },
+      {
+        'label': 'Team',
+        'href': '/?p=equipe',
+        'home': true
+      },
+      {
+        'label': 'About',
+        'href': '/?p=about',
+        'home': true
+      },
+      {
+        'label': 'FAQ',
+        'href': '/?p=faq',
+        'home': true
+      },
+    ]
+  }
+  %}
+  {% include 'modules/header.html.twig' with { 'nav': nav, 'info' : info} %}
+
+
+    <div class="container">
+
+      <div class="starter-template">
+
+        {% block body %}
+          default body
+        {% endblock %}
+
+      </div>
+
+    </div><!-- /.container -->
+
+    {% include 'modules/footer.html.twig' with { 'nav': nav, 'info' : info} %}
+
+  </body>
+</html>
