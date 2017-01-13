@@ -1,0 +1,27 @@
+{
+  "name": "gulp-sass-basic",
+  "version": "1.0.0",
+  "description": "BASIC GULP INSTALL FOR SASS",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juhau/gulp-sass-basic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juhau/gulp-sass-basic/issues"
+  },
+  "homepage": "https://github.com/juhau/gulp-sass-basic#readme"
+}
