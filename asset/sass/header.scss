@@ -1,0 +1,131 @@
+$navbar-color : #323a44;
+$navbar-font : rgba(255, 255, 255, 0.4);
+$navbar-logo : rgba(0, 50, 200, 1);
+
+.header {
+  background: $navbar-color;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+}
+.mainnav {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    transition: background 0.3s;
+}
+
+.mainnav-title {
+  float: left;
+  display: block;
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  background: $navbar-logo;
+  transition: background 0.3s;
+
+  &:hover {
+    color: #FFF;
+    text-decoration: none;
+    background-color: rgba(0, 50, 200, 0.5);
+  }
+}
+.mainnav-logo{
+  height: 70px;
+}
+
+.mainnav-list {
+  list-style-type: none;
+}
+
+.mainnav-item {
+    float: right;
+    /*&:nth-child(1) {
+      float: left;
+      display: inline-block;
+      width: 150px;
+    }*/
+}
+
+.mainnav-link {
+    display: inline-block;
+    padding: 25px 25px;
+    text-align: center;
+    color: $navbar-font;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #FFF;
+      text-decoration: none;
+    }
+}
+
+.mainnav-menu{
+  display: none;
+}
+
+@media screen and (max-width:680px) {
+  .mainnav-item:not(:first-child) {display: none;}
+  .mainnav-menu {
+    float: right;
+    display: inline-block;
+  }
+  .mainnav{
+    background: $navbar-logo;
+  }
+}
+
+.sidebar{
+  position: absolute;
+  top: 70px;
+  right: -200px;
+  bottom: 0;
+  height: 100%;
+  width: 200px;
+  background: $navbar-color;
+  transform: translateX(0);
+  transition: transform 0.3s;
+  z-index: 100;
+}
+
+.has-sidebar .sidebar{
+  transform:translateX(-200px);
+}
+
+.sidebar-link{
+  text-align: center;
+  display: block;
+  height: 70px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid #2b333c;
+  line-height: 70px;
+  color: $navbar-font;
+  transition: color 0.3s;
+  transition: background 0.3s;
+
+  &:hover, &:focus {
+      color: #FFF;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.mainnav-active{
+  color: #FFF;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#overlay {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.is-hide {
+  display: none !important;
+}
