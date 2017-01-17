@@ -1,9 +1,12 @@
-$color : grey;
+$body-color : grey;
 $navbar-color : #323a44;
 $navbar-font : rgba(255, 255, 255, 0.4);
+$navbar-logo : rgba(0, 50, 200, 1);
 
 body {
-  background: $color;
+  background: $body-color;
+  width: 100%;
+  height: 100%;
 }
 
 .header {
@@ -16,6 +19,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: auto;
+    transition: background 0.3s;
 }
 
 .mainnav-title {
@@ -24,7 +28,8 @@ body {
   color: #FFF;
   text-align: center;
   text-decoration: none;
-  background: rgba(0, 50, 200, 1);
+  background: $navbar-logo;
+  transition: background 0.3s;
 
   &:hover {
     color: #FFF;
@@ -48,17 +53,18 @@ body {
       width: 150px;
     }*/
 }
+
 .mainnav-link {
     display: inline-block;
     padding: 25px 25px;
-    color: $navbar-font;
     text-align: center;
+    color: $navbar-font;
     text-decoration: none;
+    transition: color 0.3s;
 
     &:hover {
       color: #FFF;
       text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.05);
     }
 }
 
@@ -73,7 +79,7 @@ body {
     display: inline-block;
   }
   .mainnav{
-    background: rgba(0, 50, 200, 1);
+    background: $navbar-logo;
   }
 }
 
@@ -106,10 +112,18 @@ body {
   border-bottom: 1px solid #2b333c;
   line-height: 66px;
   color: $navbar-font;
+  transition: color 0.3s;
+  transition: background 0.3s;
 
   &:hover, &:focus {
       color: #FFF;
       text-decoration: none;
       background-color: rgba(255, 255, 255, 0.05);
   }
+}
+
+.mainnav-active{
+  color: #FFF;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05);
 }

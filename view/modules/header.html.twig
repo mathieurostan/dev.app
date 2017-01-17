@@ -6,11 +6,18 @@
     </div>
 
     <ul class="mainnav-list" id="myTopnav">
-      <li class="mainnav-item mainnav-menu"><a class="mainnav-link" id="menu" href="javascript:void(0);" onclick="menuAppearence()">☰</a></li>
-      <li class="mainnav-item"><a class="mainnav-link" href="#news">News</a></li>
-      <li class="mainnav-item"><a class="mainnav-link" href="#contact">Contact</a></li>
-      <li class="mainnav-item"><a class="mainnav-link" href="#about">About</a></li>
-      <li class="mainnav-item"><a class="mainnav-link" href="#news">Equipe</a></li>
+      <li class="mainnav-item mainnav-menu"><a class="mainnav-link" id="menu" href="#">☰</a></li>
+      {% for link in nav.links %}
+          {% if link.home == true and link.home is defined %}
+            {% if link.label == info.title %}
+              <li class="mainnav-item"><a class="mainnav-link mainnav-active" href= {{ link.href }}>{{ link.label }}</a></li>
+            {% else %}
+              <li class="mainnav-item"><a class="mainnav-link" href= {{ link.href }} >{{ link.label }}</a></li>
+            {% endif %}
+          {% else %}
+            <li><a href="/?p=index">Home</a></li>
+          {% endif %}
+        {% endfor %}
     </ul>
 
   </div>
@@ -18,8 +25,15 @@
 
 <nav class="sidebar">
   <div class="sidebar-firstblock"></div>
-  <a href="#" class="sidebar-link">News</a>
-  <a href="#" class="sidebar-link">Contacts</a>
-  <a href="#" class="sidebar-link">About</a>
-  <a href="#" class="sidebar-link">Equipe</a>
+  {% for link in nav.links %}
+      {% if link.home == true and link.home is defined %}
+        {% if link.label == info.title %}
+          <a href= {{ link.href }} class="sidebar-link mainnav-active">{{ link.label }}</a>
+        {% else %}
+          <a href= {{ link.href }} class="sidebar-link">{{ link.label }}</a>
+        {% endif %}
+      {% else %}
+        <a href="/?p=index" class="sidebar-link">Home</a>
+      {% endif %}
+    {% endfor %}
 </nav>

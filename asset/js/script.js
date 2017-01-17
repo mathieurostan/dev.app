@@ -17,3 +17,12 @@
   })
 
 })()
+
+var width;
+
+window.addEventListener("resize", function(){
+  width = document.body.clientWidth;
+  if(width>680){
+    document.body.classList.remove('has-sidebar')
+  }
+}, true);

@@ -1,5 +1,7 @@
 body {
-  background: grey; }
+  background: grey;
+  width: 100%;
+  height: 100%; }
 
 .header {
   background: #323a44;
@@ -10,7 +12,8 @@ body {
 .mainnav {
   margin: 0;
   padding: 0;
-  overflow: auto; }
+  overflow: auto;
+  transition: background 0.3s; }
 
 .mainnav-title {
   float: left;
@@ -18,7 +21,8 @@ body {
   color: #FFF;
   text-align: center;
   text-decoration: none;
-  background: #0032c8; }
+  background: #0032c8;
+  transition: background 0.3s; }
   .mainnav-title:hover {
     color: #FFF;
     text-decoration: none;
@@ -41,13 +45,13 @@ body {
 .mainnav-link {
   display: inline-block;
   padding: 25px 25px;
-  color: rgba(255, 255, 255, 0.4);
   text-align: center;
-  text-decoration: none; }
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.3s; }
   .mainnav-link:hover {
     color: #FFF;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.05); }
+    text-decoration: none; }
 
 .mainnav-menu {
   display: none; }
@@ -86,8 +90,15 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid #2b333c;
   line-height: 66px;
-  color: rgba(255, 255, 255, 0.4); }
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s;
+  transition: background 0.3s; }
   .sidebar-link:hover, .sidebar-link:focus {
     color: #FFF;
     text-decoration: none;
     background-color: rgba(255, 255, 255, 0.05); }
+
+.mainnav-active {
+  color: #FFF;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.05); }
