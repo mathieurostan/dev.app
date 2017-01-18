@@ -13,8 +13,10 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="asset/css/style.css">
+
+    <link rel="stylesheet" href="asset/css/base.css">
     <link rel="stylesheet" href="asset/css/header.css">
+    <link rel="stylesheet" href="asset/css/index.css">
 
   </head>
 
@@ -49,22 +51,20 @@
   {% include 'modules/header.html.twig' with { 'nav': nav, 'info' : info} %}
 
 
-    <div class="container">
-
-      <div class="starter-template">
-
+    <div class="container-body">
+      <div class="container-box">
 
         {% block body %}
           default body
         {% endblock %}
 
       </div>
-
     </div><!-- /.container -->
 
     {% include 'modules/footer.html.twig' with { 'nav': nav, 'info' : info} %}
 
     <div id="overlay" class="is-hide"></div>
     <script src="asset/js/header.js"></script>
+    <script src="asset/js/index.js"></script>
   </body>
 </html>

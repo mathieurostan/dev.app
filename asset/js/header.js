@@ -208,11 +208,11 @@ elemCtrProto.__defineGetter__(classListProp, classListGetter);
 
   window.addEventListener("resize", function(){
     width = document.body.clientWidth;
-    if(width>=680 && sidebarOpened && navbarOpened){
+    if(width>=768 && sidebarOpened && navbarOpened){
       sidebar.classList.remove('has-sidebar')
       overlay.classList.add('is-hide');
     }
-    if(width<680 && sidebarOpened && navbarOpened){
+    if(width<768 && sidebarOpened && navbarOpened){
       sidebar.classList.add('has-sidebar')
       overlay.classList.remove('is-hide');
     }
@@ -233,7 +233,7 @@ elemCtrProto.__defineGetter__(classListProp, classListGetter);
 
     if(scrollY() > lastknownPosY){
       header.classList.add('hasno-navbar')
-      if(width<700 && sidebarOpened){
+      if(width<768 && sidebarOpened){
         sidebar.classList.remove('has-sidebar')
         overlay.classList.add('is-hide');
       }
@@ -241,7 +241,7 @@ elemCtrProto.__defineGetter__(classListProp, classListGetter);
       lastknownPosY = scrollY()
     } else if (scrollY() <= lastknownPosY){
       header.classList.remove('hasno-navbar')
-      if(width<700 && sidebarOpened){
+      if(width<768 && sidebarOpened){
         sidebar.classList.add('has-sidebar')
         overlay.classList.remove('is-hide');
       }
