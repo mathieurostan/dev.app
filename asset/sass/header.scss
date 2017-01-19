@@ -10,6 +10,7 @@ $navbar-logo : rgba(0, 50, 200, 1);
   display: block;
   transform: translateY(0);
   transition: transform 0.3s;
+  z-index: 99;
 }
 .hasno-navbar{
   transform:translateY(-70px);
@@ -70,10 +71,59 @@ $navbar-logo : rgba(0, 50, 200, 1);
 
 .mainnav-menu{
   display: none;
+  position: relative;
+
+  transition: transform 0.5s;
+}
+.mainnav-menu .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    display: block;
+    width: 22px;
+    height: 2px;
+
+    background-color: #FFF;
+
+    transition: background 0.5s;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-6px);
+
+        display: block;
+        width: 22px;
+        height: 2px;
+
+        background-color: #FFF;
+
+        transition: transform 0.5s;
+    }
+    &::after {
+        transform: translateY(6px);
+    }
+}
+.mainnav-menu.is-opened .icon {
+  background: transparent;
+  &::before {
+    transform: translateY(0) rotate(45deg);
+  }
+  &::after {
+    transform: translateY(0) rotate(-45deg);
+  }
+}
+.mainnav-menu.is-opened {
+  transform: rotate(180deg); 
 }
 
+
 @media screen and (max-width:768px) {
-  .mainnav-item:not(:first-child) {display: none;}
+  .mainnav-item {display: none;}
   .mainnav-menu {
     float: right;
     display: inline-block;

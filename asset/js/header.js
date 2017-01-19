@@ -182,6 +182,7 @@ elemCtrProto.__defineGetter__(classListProp, classListGetter);
 
   let sidebarOpened = false
   let button = document.querySelector('#menu')
+  const menu = document.querySelector('.mainnav-menu')
   const sidebar = document.querySelector('.sidebar')
 
   button.addEventListener('click',function (e){
@@ -191,8 +192,10 @@ elemCtrProto.__defineGetter__(classListProp, classListGetter);
     overlay.classList.toggle('is-hide');
     if(sidebarOpened){
       sidebarOpened = false;
+      menu.classList.remove('is-opened')
     }else{
       sidebarOpened = true;
+      menu.classList.add('is-opened')
     }
   })
 
@@ -201,6 +204,7 @@ elemCtrProto.__defineGetter__(classListProp, classListGetter);
       sidebar.classList.remove('has-sidebar')
       overlay.classList.add('is-hide');
       sidebarOpened = false
+      menu.classList.remove('is-opened')
     }
   })
 
@@ -233,18 +237,16 @@ elemCtrProto.__defineGetter__(classListProp, classListGetter);
 
     if(scrollY() > lastknownPosY){
       header.classList.add('hasno-navbar')
-      if(width<768 && sidebarOpened){
+      if(sidebarOpened){
         sidebar.classList.remove('has-sidebar')
         overlay.classList.add('is-hide');
+        menu.classList.remove('is-opened')
+        sidebarOpened = false
       }
       navbarOpened = false
       lastknownPosY = scrollY()
     } else if (scrollY() <= lastknownPosY){
       header.classList.remove('hasno-navbar')
-      if(width<768 && sidebarOpened){
-        sidebar.classList.add('has-sidebar')
-        overlay.classList.remove('is-hide');
-      }
       navbarOpened = true
       lastknownPosY = scrollY()
     }
